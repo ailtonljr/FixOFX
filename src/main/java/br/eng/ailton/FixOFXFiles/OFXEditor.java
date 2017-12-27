@@ -198,7 +198,9 @@ public class OFXEditor {
 						
 						
 						
-						if(memoMatcher.find())
+						if(memoMatcher.find() && 
+								!transaction.getMemo().startsWith("ANUIDADE") && 
+								!transaction.getMemo().startsWith("DESCONTO ADC"))
 						{
 							
 							
