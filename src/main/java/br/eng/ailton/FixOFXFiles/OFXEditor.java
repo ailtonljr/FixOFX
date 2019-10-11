@@ -5,10 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,12 +21,10 @@ import com.webcohesion.ofx4j.domain.data.banking.BankingResponseMessageSet;
 import com.webcohesion.ofx4j.domain.data.common.Transaction;
 import com.webcohesion.ofx4j.domain.data.creditcard.CreditCardResponseMessageSet;
 import com.webcohesion.ofx4j.domain.data.creditcard.CreditCardStatementResponseTransaction;
-import com.webcohesion.ofx4j.domain.data.signon.SignonResponse;
 import com.webcohesion.ofx4j.io.AggregateMarshaller;
 import com.webcohesion.ofx4j.io.AggregateUnmarshaller;
 import com.webcohesion.ofx4j.io.OFXParseException;
 import com.webcohesion.ofx4j.io.v1.OFXV1Writer;
-import com.webcohesion.ofx4j.io.v2.OFXV2Writer;
 
 
 /**
@@ -65,7 +60,7 @@ public class OFXEditor {
 		try {
 			responseEnvelope = unmarshaller.unmarshal(new FileInputStream(ofxFile));
 			
-			SignonResponse sr = responseEnvelope.getSignonResponse();
+			//SignonResponse sr = responseEnvelope.getSignonResponse();
 			
 			responseMessageSet = responseEnvelope.getMessageSet(type);
 			
